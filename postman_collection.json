@@ -1,0 +1,115 @@
+{
+  "info": {
+    "name": "Vynzora Vehicle System API",
+    "description": "Postman Collection for Vynzora AI & Python Django Intern Task",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Vehicles",
+      "item": [
+        {
+          "name": "List All Vehicles",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/vehicles/"
+          }
+        },
+        {
+          "name": "Filter Vehicles by Brand (Toyota)",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/vehicles/?brand=Toyota"
+          }
+        },
+        {
+          "name": "Filter Vehicles by Fuel Type (Electric)",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/vehicles/?fuel_type=Electric"
+          }
+        },
+        {
+          "name": "Filter Vehicles by Availability (is_available=true)",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/vehicles/?is_available=true"
+          }
+        },
+        {
+          "name": "Create Vehicle",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Model 3\",\n  \"brand\": \"Tesla\",\n  \"year\": 2024,\n  \"price_per_day\": \"140.00\",\n  \"fuel_type\": \"Electric\",\n  \"is_available\": true\n}"
+            },
+            "url": "{{base_url}}/api/vehicles/"
+          }
+        },
+        {
+          "name": "Get Vehicle Details",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/vehicles/1/"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bookings",
+      "item": [
+        {
+          "name": "List Bookings",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/bookings/"
+          }
+        },
+        {
+          "name": "Create Valid Booking",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vehicle\": 1,\n  \"customer_name\": \"Joy Kannadan\",\n  \"customer_phone\": \"9876543210\",\n  \"start_date\": \"2026-10-25\",\n  \"end_date\": \"2026-10-28\"\n}"
+            },
+            "url": "{{base_url}}/api/bookings/"
+          }
+        },
+        {
+          "name": "Test Validation: Overlapping Booking (Should Fail)",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vehicle\": 1,\n  \"customer_name\": \"Second Customer\",\n  \"customer_phone\": \"9876543210\",\n  \"start_date\": \"2026-10-26\",\n  \"end_date\": \"2026-10-29\"\n}"
+            },
+            "url": "{{base_url}}/api/bookings/"
+          }
+        },
+        {
+          "name": "Test Validation: Invalid Phone (Should Fail)",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vehicle\": 1,\n  \"customer_name\": \"Test User\",\n  \"customer_phone\": \"12345\",\n  \"start_date\": \"2026-10-25\",\n  \"end_date\": \"2026-10-28\"\n}"
+            },
+            "url": "{{base_url}}/api/bookings/"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000"
+    }
+  ]
+}
