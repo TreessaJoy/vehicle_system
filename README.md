@@ -8,8 +8,8 @@ A robust, production-ready REST API built with **Django REST Framework (DRF)** i
 
 ## 🚀 Live Demo & Video Walkthrough
 
-- **Live Deployed API:** [https://vynzora-vehicle-api.onrender.com/api/docs/](https://vynzora-vehicle-api.onrender.com/api/docs/) *(Replace with your deployed URL)*
-- **Screen Recording Walkthrough (2-5 mins):** [Watch on Loom / Google Drive](https://drive.google.com/file/d/YOUR_VIDEO_ID/view) *(Replace with your recording link)*
+- **Live Deployed API:** [https://vynzora-vehicle-api.onrender.com/api/docs/](https://vynzora-vehicle-api.onrender.com/api/docs/) 
+- **Screen Recording Walkthrough (2-5 mins):** [Watch on Loom / Google Drive](https://drive.google.com/file/d/YOUR_VIDEO_ID/view) 
 
 ---
 
